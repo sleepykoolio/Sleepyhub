@@ -8,9 +8,8 @@ body {
     align-items: center;
 }
     header {
-  display: flex; 
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  center: 30px;
   background-color: #666;
   padding: 30px;
   text-align: center;

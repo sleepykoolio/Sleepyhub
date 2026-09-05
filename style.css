@@ -1,41 +1,4 @@
 /* 1. Global Page Settings */
 body {
-    background-color: #f4f7f6; /* Light gray-green background */
-    font-family: system-ui, sans-serif; /* Modern, clean text */
-    color: #2c3e50; /* Dark slate text */
-    line-height: 1.6;
-    margin: 40px auto;
-    max-width: 800px; /* Keeps text from stretching too wide */
-    padding: 0 20px;
-}
-
-/* 2. Heading Styles */
-h1 {
-    color: #2e7d32; /* Deep green */
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-/* 3. Class Selector (targets elements with class="intro-text") */
-.intro-text {
-    font-size: 1.2rem;
-    font-style: italic;
-    color: #7f8c8d;
-}
-
-/* 4. Button Styles */
-.btn-primary {
-    background-color: #2e7d32;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer; /* Makes cursor look like a hand on hover */
-    transition: background 0.3s; /* Smooth color change */
-}
-
-/* 5. Hover Effect (happens when mouse moves over the button) */
-.btn-primary:hover {
-    background-color: #1b5e20; /* Darker green */
-}
+    background-color: lightblue;
+    }

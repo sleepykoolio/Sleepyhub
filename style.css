@@ -1,52 +1,19 @@
-/* 1. Global Page Settings */
-:root{
-  --g1: #0f0c29;
-  --g2: #302b63;
-  --g3: #4b6cb7;
-  --overlay: rgba(255,255,255,0.03);
-}
-
-/* Apply to whole page */
-body{
-  min-height: 100vh;
-  margin: 0;
-  background: linear-gradient(120deg, var(--g1), var(--g2), var(--g3));
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-  color: #fff; /* adjust text color as needed */
-  position: relative;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-}
-
-/* Subtle vignette/overlay for depth */
-body::before{
-  content: "";
+/* Canvas covers the entire viewport */
+canvas#stars {
   position: fixed;
   inset: 0;
-  pointer-events: none;
-  background: radial-gradient(60% 60% at 10% 10%, rgba(255,255,255,0.02), transparent 20%),
-              radial-gradient(50% 50% at 90% 90%, rgba(0,0,0,0.15), transparent 40%),
-              linear-gradient(180deg, var(--overlay), transparent);
-  mix-blend-mode: overlay;
+  width: 100%;
+  height: 100%;
+  display: block;
   z-index: 0;
+  pointer-events: none; /* so page interactions still work */
 }
 
-/* Ensure page content sits above the overlay */
-#page, main, .app, .container { position: relative; z-index: 1; }
-
-/* Animation - smooth shift of the gradient */
-@keyframes gradientShift{
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* Your site content should sit above the canvas */
+.site-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  padding: 2rem;
+  font-family: system-ui, Arial, sans-serif;
 }
-
-/* Respect users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce){
-  body{
-    animation: none;
-    background-size: cover;
-  }
-  body::before { display: none; }
-}}

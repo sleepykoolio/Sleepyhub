@@ -1,18 +1,4 @@
 body {
-  background: linear-gradient(-45deg, #0f0f13, #1a0b2e, #0b132b, #121212);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
-  color: #ffffff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  min-height: 100vh;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  background:black;
+  
 }

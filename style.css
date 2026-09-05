@@ -1,19 +1,91 @@
-body {
-  background-color: black;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 30px 30px;
+/* Container for the night sky */
+.night-sky {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(circle at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
 }
-::-webkit-scrollbar {
-  width: 8px;
+
+/* Base style for all shooting stars */
+.shooting-star {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 2px;
+  /* A fading gradient creates the "tail" effect */
+  background: linear-gradient(-45deg, #5f91ff, rgba(0, 0, 255, 0));
+  border-radius: 999px;
+  filter: drop-shadow(0 0 6px #699bff);
+  animation: tail 3000ms ease-in-out infinite, shoot 3000ms ease-in-out infinite;
+  transform: rotate(-45deg);
 }
-::-webkit-scrollbar-track {
-  background: #0f0f13;
+
+/* The head of the star (shining point) */
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 4px;
+  width: 4px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 10px 2px #fff;
 }
-::-webkit-scrollbar-thumb {
-  background: #2a2a35;
-  border-radius: 4px;
+
+/* Staggering positions and delays for a natural look */
+.shooting-star:nth-child(1) {
+  top: 10%;
+  left: 40%;
+  animation-delay: 0ms;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #3a3a4a;
+
+.shooting-star:nth-child(2) {
+  top: 20%;
+  left: 70%;
+  animation-delay: 800ms;
+}
+
+.shooting-star:nth-child(3) {
+  top: 5%;
+  left: 20%;
+  animation-delay: 1400ms;
+}
+
+.shooting-star:nth-child(4) {
+  top: 35%;
+  left: 85%;
+  animation-delay: 2200ms;
+}
+
+.shooting-star:nth-child(5) {
+  top: 15%;
+  left: 55%;
+  animation-delay: 4000ms;
+}
+
+/* ANIMATION KEYFRAMES */
+
+/* Extends and retracts the tail during flight */
+@keyframes tail {
+  0% { width: 0; }
+  30% { width: 100px; }
+  100% { width: 0; }
+}
+
+/* Moves the star diagonally and fades it out */
+@keyframes shoot {
+  0% {
+    transform: translateX(0) rotate(-45deg);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-400px) rotate(-45deg);
+    opacity: 0;
+  }
 }

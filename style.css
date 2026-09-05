@@ -3,8 +3,12 @@ body {
     min-height: 100vh;
     margin: 0;
     
-    h1 {
-  color: orange;
+    header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
 }
     p {
   color: purple;

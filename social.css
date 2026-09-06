@@ -28,6 +28,8 @@ body {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .logo {
@@ -36,11 +38,14 @@ body {
     color: #ffffff;
     letter-spacing: 1px;
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    word-wrap: break-word;
 }
 
 .nav-links {
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .nav-links a {
@@ -51,6 +56,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: color 0.3s ease, text-shadow 0.3s ease;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -61,7 +67,7 @@ body {
 /* CSS Grid Layout for Buttons */
 .accounts-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     max-width: 800px;
     margin: 40px auto 50px auto;
@@ -79,6 +85,7 @@ body {
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+    font-size: 1rem;
 }
 
 /* The Lift Animation */
@@ -100,3 +107,90 @@ body {
 .facebook:hover { box-shadow: 0 0 20px rgba(24, 119, 242, 0.6); border-color: rgba(24, 119, 242, 0.5); }
 .messenger:hover { box-shadow: 0 0 20px rgba(0, 106, 255, 0.6); border-color: rgba(0, 106, 255, 0.5); }
 .weverse:hover { box-shadow: 0 0 20px rgba(0, 210, 180, 0.6); border-color: rgba(0, 210, 180, 0.5); }
+
+/* ===== TABLET RESPONSIVE (768px and below) ===== */
+@media (max-width: 768px) {
+    .top-nav {
+        padding: 18px 25px;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+        letter-spacing: 0.5px;
+        flex-basis: 100%;
+        order: 1;
+    }
+
+    .nav-links {
+        gap: 20px;
+        flex-basis: 100%;
+        order: 2;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+    }
+
+    .accounts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin: 30px auto 40px auto;
+        padding: 0 15px;
+    }
+
+    .social-btn {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+        border-radius: 10px;
+    }
+}
+
+/* ===== MOBILE RESPONSIVE (480px and below) ===== */
+@media (max-width: 480px) {
+    .top-nav {
+        padding: 12px 15px;
+        gap: 8px;
+    }
+
+    .logo {
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        text-align: center;
+        flex-basis: 100%;
+        order: 1;
+    }
+
+    .nav-links {
+        gap: 12px;
+        flex-basis: 100%;
+        order: 2;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 0.7rem;
+        letter-spacing: 0.3px;
+        padding: 4px 6px;
+    }
+
+    .accounts-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        max-width: 100%;
+        margin: 25px auto 35px auto;
+        padding: 0 12px;
+    }
+
+    .social-btn {
+        padding: 12px 15px;
+        font-size: 0.85rem;
+        border-radius: 8px;
+    }
+
+    .social-btn:hover {
+        transform: translateY(-2px) scale(1.01);
+    }
+}

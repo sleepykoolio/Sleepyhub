@@ -4,6 +4,7 @@ body {
     color: #E0E0E0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
+    padding: 0;
     min-height: 100vh;
 }
 
@@ -13,7 +14,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 /* Sleepyhub Logo Styling */
@@ -22,12 +25,15 @@ body {
     font-weight: bold;
     color: #ffffff;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    word-wrap: break-word;
 }
 
 /* The Links Container */
 .nav-links {
     display: flex;
     gap: 25px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 /* Individual Links */
@@ -38,10 +44,58 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     transition: color 0.2s ease, text-shadow 0.2s ease;
+    white-space: nowrap;
 }
 
 /* Hover Effect for Links */
 .nav-links a:hover {
     color: #ffffff;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* ===== TABLET RESPONSIVE (768px and below) ===== */
+@media (max-width: 768px) {
+    .top-nav {
+        padding: 15px 20px;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+        flex-basis: 100%;
+        order: 1;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-basis: 100%;
+        order: 2;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+}
+
+/* ===== MOBILE RESPONSIVE (480px and below) ===== */
+@media (max-width: 480px) {
+    .top-nav {
+        padding: 12px 15px;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .nav-links {
+        gap: 10px;
+        flex-basis: 100%;
+    }
+
+    .nav-links a {
+        font-size: 0.75rem;
+        padding: 5px 8px;
+    }
 }

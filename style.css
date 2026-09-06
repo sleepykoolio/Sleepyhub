@@ -1,3 +1,12 @@
+/* 1. The Sleepyhub Background */
+body {
+    background: linear-gradient(135deg, #0F172A, #020617);
+    color: #E0E0E0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
 /* Navigation Bar Container */
 .top-nav {
     display: flex;

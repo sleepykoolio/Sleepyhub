@@ -1,47 +1,102 @@
-/* 1. The Sleepyhub Background */
+/* Base Reset & Background */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background: linear-gradient(135deg, #0F172A, #020617);
     color: #E0E0E0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
     min-height: 100vh;
 }
 
-/* Navigation Bar Container */
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0f0f13; }
+::-webkit-scrollbar-thumb { background: #2a2a35; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a4a; }
+
+/* Navigation Bar */
 .top-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    padding: 25px 50px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Sleepyhub Logo Styling */
 .logo {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #ffffff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    letter-spacing: 1px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
-/* The Links Container */
 .nav-links {
     display: flex;
-    gap: 25px;
+    gap: 30px;
 }
 
-/* Individual Links */
 .nav-links a {
-    color: #E0E0E0;
+    color: #a0a0ab;
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 600;
     text-transform: uppercase;
-    transition: color 0.2s ease, text-shadow 0.2s ease;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-/* Hover Effect for Links */
 .nav-links a:hover {
     color: #ffffff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
+
+/* CSS Grid Layout for Buttons */
+.accounts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+    max-width: 800px;
+    margin: 40px auto 50px auto;
+    padding: 0 20px;
+}
+
+/* Base Button Styling (Glassmorphism) */
+.social-btn {
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+/* The Lift Animation */
+.social-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Original Platform Hover Glows */
+.discord:hover { box-shadow: 0 0 20px rgba(88, 101, 242, 0.6); border-color: rgba(88, 101, 242, 0.5); }
+.youtube:hover { box-shadow: 0 0 20px rgba(255, 0, 0, 0.6); border-color: rgba(255, 0, 0, 0.5); }
+.twitch:hover { box-shadow: 0 0 20px rgba(145, 70, 255, 0.6); border-color: rgba(145, 70, 255, 0.5); }
+.instagram:hover { box-shadow: 0 0 20px rgba(225, 48, 108, 0.6); border-color: rgba(225, 48, 108, 0.5); }
+.twitter:hover { box-shadow: 0 0 20px rgba(29, 161, 242, 0.6); border-color: rgba(29, 161, 242, 0.5); }
+
+/* New Platform Hover Glows */
+.tiktok:hover { box-shadow: 0 0 20px rgba(0, 242, 254, 0.6); border-color: rgba(255, 0, 80, 0.5); }
+.snapchat:hover { box-shadow: 0 0 20px rgba(255, 252, 0, 0.6); border-color: rgba(255, 252, 0, 0.5); color: #000; }
+.facebook:hover { box-shadow: 0 0 20px rgba(24, 119, 242, 0.6); border-color: rgba(24, 119, 242, 0.5); }
+.messenger:hover { box-shadow: 0 0 20px rgba(0, 106, 255, 0.6); border-color: rgba(0, 106, 255, 0.5); }
+.weverse:hover { box-shadow: 0 0 20px rgba(0, 210, 180, 0.6); border-color: rgba(0, 210, 180, 0.5); }

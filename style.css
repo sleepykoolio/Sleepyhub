@@ -1,0 +1,38 @@
+/* Navigation Bar Container */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+/* Sleepyhub Logo Styling */
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* The Links Container */
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+/* Individual Links */
+.nav-links a {
+    color: #E0E0E0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+/* Hover Effect for Links */
+.nav-links a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}

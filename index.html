@@ -1,515 +1,154 @@
-:root {
-  --bg: #0b1020;
-  --bg-alt: #111827;
-  --panel: rgba(17, 24, 39, 0.78);
-  --card: rgba(15, 23, 42, 0.9);
-  --line: rgba(148, 163, 184, 0.18);
-  --text: #edf2ff;
-  --muted: #b5c1d8;
-  --purple: #8b5cf6;
-  --blue: #38bdf8;
-  --gold: #fbbf24;
-  --green: #34d399;
-  --shadow: rgba(15, 23, 42, 0.45);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at top left, rgba(139, 92, 246, 0.18), transparent 24%),
-    radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.18), transparent 22%),
-    linear-gradient(135deg, var(--bg) 0%, #020817 100%);
-  color: var(--text);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.top-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 22px 24px 18px;
-  border-bottom: 1px solid var(--line);
-}
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--purple), var(--blue));
-  color: #fff;
-  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.35);
-}
-
-.accent {
-  color: var(--blue);
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-
-.nav-links a {
-  position: relative;
-  color: var(--muted);
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  transition: color 0.2s ease;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--purple), var(--blue));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.2s ease;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--text);
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-  transform: scaleX(1);
-}
-
-.page-shell {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 52px 24px 80px;
-}
-
-.hero {
-  display: grid;
-  grid-template-columns: 1.3fr 0.85fr;
-  gap: 28px;
-  align-items: center;
-}
-
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 14px;
-  border: 1px solid rgba(139, 92, 246, 0.25);
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.6);
-  color: var(--muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.7rem;
-}
-
-.pulse {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 0 8px rgba(52, 211, 153, 0.18);
-}
-
-.hero h1 {
-  margin: 22px 0 16px;
-  font-size: clamp(2.8rem, 5vw, 5rem);
-  line-height: 0.96;
-  letter-spacing: -0.06em;
-}
-
-.gradient-text {
-  background: linear-gradient(120deg, var(--purple), var(--blue), var(--gold));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.hero-copy p {
-  margin: 0;
-  max-width: 620px;
-  color: var(--muted);
-  font-size: 1.06rem;
-  line-height: 1.7;
-}
-
-.cta-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 28px;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  padding: 0 22px;
-  border-radius: 999px;
-  font-weight: 700;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-1px);
-}
-
-.btn.primary {
-  background: linear-gradient(135deg, var(--purple), var(--blue));
-  color: #fff;
-  box-shadow: 0 18px 30px rgba(59, 130, 246, 0.18);
-}
-
-.btn.secondary {
-  background: rgba(15, 23, 42, 0.65);
-  border: 1px solid var(--line);
-  color: var(--text);
-}
-
-.hero-meta {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 28px;
-}
-
-.meta-item {
-  padding: 18px 16px;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: rgba(15, 23, 42, 0.5);
-}
-
-.meta-item strong {
-  display: block;
-  font-size: 1.05rem;
-  margin-bottom: 6px;
-}
-
-.meta-item span {
-  color: var(--muted);
-  font-size: 0.86rem;
-}
-
-.hero-panel {
-  padding: 24px;
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7));
-  box-shadow: 0 30px 50px var(--shadow);
-}
-
-.profile-card {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--line);
-}
-
-.avatar {
-  display: grid;
-  place-items: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, var(--purple), var(--blue));
-  font-weight: 800;
-  letter-spacing: 0.04em;
-}
-
-.profile-card small {
-  display: block;
-  color: var(--muted);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-size: 0.68rem;
-}
-
-.profile-card h2 {
-  margin: 6px 0 0;
-  font-size: 1.5rem;
-}
-
-.mini-list {
-  list-style: none;
-  padding: 20px 0 0;
-  margin: 0;
-  display: grid;
-  gap: 16px;
-}
-
-.mini-list li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--muted);
-  font-weight: 500;
-}
-
-.dot {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-.dot.green {
-  background: var(--green);
-  box-shadow: 0 0 0 6px rgba(52, 211, 153, 0.15);
-}
-
-.dot.gold {
-  background: var(--gold);
-  box-shadow: 0 0 0 6px rgba(251, 191, 36, 0.15);
-}
-
-.dot.blue {
-  background: var(--blue);
-  box-shadow: 0 0 0 6px rgba(56, 189, 248, 0.15);
-}
-
-.panel-quote {
-  margin-top: 22px;
-  padding: 18px 20px;
-  border-radius: 18px;
-  background: rgba(139, 92, 246, 0.12);
-  border: 1px solid rgba(139, 92, 246, 0.3);
-  color: #e9ddff;
-  line-height: 1.6;
-}
-
-.overview {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 28px;
-  margin-top: 72px;
-}
-
-.panel,
-.stat-card,
-.feature-card {
-  border: 1px solid var(--line);
-  background: var(--panel);
-  border-radius: 24px;
-}
-
-.panel {
-  padding: 28px;
-}
-
-.section-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 18px;
-}
-
-.section-heading p {
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--blue);
-  font-size: 0.72rem;
-  font-weight: 700;
-}
-
-.section-heading span {
-  color: var(--muted);
-  font-size: 0.78rem;
-}
-
-.intro-panel h3 {
-  margin: 0 0 12px;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  letter-spacing: -0.04em;
-}
-
-.intro-panel p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.stat-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 170px;
-  padding: 26px 18px;
-  text-align: center;
-}
-
-.stat-card strong {
-  font-size: clamp(2.3rem, 5vw, 3.3rem);
-  line-height: 1;
-  margin-bottom: 10px;
-}
-
-.stat-card span {
-  color: var(--muted);
-}
-
-.showcase {
-  margin-top: 72px;
-}
-
-.section-heading-wide {
-  margin-bottom: 20px;
-}
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.feature-card {
-  padding: 24px 22px;
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(139, 92, 246, 0.4);
-}
-
-.card-icon {
-  display: grid;
-  place-items: center;
-  width: 54px;
-  height: 54px;
-  border-radius: 16px;
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 18px;
-}
-
-.card-icon.purple {
-  background: rgba(139, 92, 246, 0.14);
-  color: #d9c8ff;
-}
-
-.card-icon.gold {
-  background: rgba(251, 191, 36, 0.14);
-  color: #ffe7a3;
-}
-
-.card-icon.blue {
-  background: rgba(56, 189, 248, 0.14);
-  color: #cfeeff;
-}
-
-.feature-card h3 {
-  margin: 0 0 10px;
-  font-size: 1.5rem;
-}
-
-.feature-card p {
-  margin: 0 0 18px;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-.feature-card a {
-  color: #d5d9ff;
-  font-weight: 700;
-}
-
-.site-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  padding: 26px 18px 36px;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-}
-
-.site-footer span {
-  color: var(--text);
-}
-
-@media (max-width: 900px) {
-  .hero,
-  .overview {
-    grid-template-columns: 1fr;
-  }
-
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 640px) {
-  .top-nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    gap: 14px 18px;
-  }
-
-  .hero-meta,
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .page-shell {
-    padding-top: 36px;
-  }
-
-  .hero h1 {
-    font-size: 2.6rem;
-  }
-
-  .panel,
-  .hero-panel,
-  .feature-card {
-    border-radius: 20px;
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sleepyhub is the home of gaming, cars, content, and community."
+    />
+    <title>Sleepyhub | Home</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="top-nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Sleepyhub home">
+        <span class="brand-mark">S</span>
+        <span>sleepy<span class="accent">hub</span></span>
+      </a>
+
+      <div class="nav-links">
+        <a class="active" href="index.html">Home</a>
+        <a href="business.html">Detailing</a>
+        <a href="social.html">Socials</a>
+      </div>
+    </nav>
+
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="pulse"></span> Welcome to sleepyhub</div>
+          <h1>
+            Content, <span class="gradient-text">cars</span>, and<br />
+            community in one place.
+          </h1>
+          <p>
+            Sleepyhub is where gaming, school life, vlogs, and car culture all come together.
+            Follow the journey, check out the detailing work, and connect across every platform.
+          </p>
+
+          <div class="cta-group">
+            <a class="btn primary" href="social.html">Explore socials</a>
+            <a class="btn secondary" href="business.html">See detailing</a>
+          </div>
+
+          <div class="hero-meta">
+            <div class="meta-item">
+              <strong>Gaming</strong>
+              <span>Streams & clips</span>
+            </div>
+            <div class="meta-item">
+              <strong>Cars</strong>
+              <span>Garage & detailing</span>
+            </div>
+            <div class="meta-item">
+              <strong>Life</strong>
+              <span>School & vlogs</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Featured summary">
+          <div class="profile-card">
+            <div class="avatar">SK</div>
+            <div>
+              <small>Creator profile</small>
+              <h2>SleepyKoolio</h2>
+            </div>
+          </div>
+
+          <ul class="mini-list">
+            <li>
+              <span class="dot green"></span>
+              Streaming & gaming
+            </li>
+            <li>
+              <span class="dot gold"></span>
+              Detailing & garage content
+            </li>
+            <li>
+              <span class="dot blue"></span>
+              Socials, school, and vlogs
+            </li>
+          </ul>
+
+          <div class="panel-quote">
+            “Always building, always creating, always connecting.”
+          </div>
+        </aside>
+      </section>
+
+      <section class="overview">
+        <article class="panel intro-panel">
+          <div class="section-heading">
+            <p>About</p>
+            <span>Who this is</span>
+          </div>
+          <h3>Built for a bigger online presence.</h3>
+          <p>
+            This is more than a homepage — it’s a digital hub for every side of the brand. From
+            streaming highlights to car detailing, this space keeps everything easy to find and easy
+            to follow.
+          </p>
+        </article>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <strong>03</strong>
+            <span>Core interests</span>
+          </div>
+          <div class="stat-card">
+            <strong>∞</strong>
+            <span>Creative ideas</span>
+          </div>
+          <div class="stat-card">
+            <strong>1</strong>
+            <span>Community</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="showcase">
+        <div class="section-heading section-heading-wide">
+          <p>Highlights</p>
+          <span>What you'll find</span>
+        </div>
+
+        <div class="cards-grid">
+          <article class="feature-card">
+            <div class="card-icon purple">◈</div>
+            <h3>Gaming & community</h3>
+            <p>Keep up with streams, clips, and the online community that follows the journey.</p>
+            <a href="social.html">Jump to socials</a>
+          </article>
+
+          <article class="feature-card">
+            <div class="card-icon gold">✦</div>
+            <h3>Detailing & garage</h3>
+            <p>Explore the business side, from car care to the custom detail work behind the brand.</p>
+            <a href="business.html">View detailing</a>
+          </article>
+
+          <article class="feature-card">
+            <div class="card-icon blue">◎</div>
+            <h3>School & daily life</h3>
+            <p>Catch the personal side of the creator — daily moments, vlogs, and everything in between.</p>
+            <a href="social.html">Follow along</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">© 2025 Sleepyhub <span>built for the internet</span></footer>
+  </body>
+</html>

@@ -1,101 +1,154 @@
-/* 1. The Sleepyhub Background */
-body {
-    background: linear-gradient(135deg, #0F172A, #020617);
-    color: #E0E0E0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sleepyhub is the home of gaming, cars, content, and community."
+    />
+    <title>Sleepyhub | Home</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="top-nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Sleepyhub home">
+        <span class="brand-mark">S</span>
+        <span>sleepy<span class="accent">hub</span></span>
+      </a>
 
-/* Navigation Bar Container */
-.top-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    flex-wrap: wrap;
-    gap: 15px;
-}
+      <div class="nav-links">
+        <a class="active" href="index.html">Home</a>
+        <a href="business.html">Detailing</a>
+        <a href="social.html">Socials</a>
+      </div>
+    </nav>
 
-/* Sleepyhub Logo Styling */
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    word-wrap: break-word;
-}
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="pulse"></span> Welcome to sleepyhub</div>
+          <h1>
+            Content, <span class="gradient-text">cars</span>, and<br />
+            community in one place.
+          </h1>
+          <p>
+            Sleepyhub is where gaming, school life, vlogs, and car culture all come together.
+            Follow the journey, check out the detailing work, and connect across every platform.
+          </p>
 
-/* The Links Container */
-.nav-links {
-    display: flex;
-    gap: 25px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-}
+          <div class="cta-group">
+            <a class="btn primary" href="social.html">Explore socials</a>
+            <a class="btn secondary" href="business.html">See detailing</a>
+          </div>
 
-/* Individual Links */
-.nav-links a {
-    color: #E0E0E0;
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    transition: color 0.2s ease, text-shadow 0.2s ease;
-    white-space: nowrap;
-}
+          <div class="hero-meta">
+            <div class="meta-item">
+              <strong>Gaming</strong>
+              <span>Streams & clips</span>
+            </div>
+            <div class="meta-item">
+              <strong>Cars</strong>
+              <span>Garage & detailing</span>
+            </div>
+            <div class="meta-item">
+              <strong>Life</strong>
+              <span>School & vlogs</span>
+            </div>
+          </div>
+        </div>
 
-/* Hover Effect for Links */
-.nav-links a:hover {
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
+        <aside class="hero-panel" aria-label="Featured summary">
+          <div class="profile-card">
+            <div class="avatar">SK</div>
+            <div>
+              <small>Creator profile</small>
+              <h2>SleepyKoolio</h2>
+            </div>
+          </div>
 
-/* ===== TABLET RESPONSIVE (768px and below) ===== */
-@media (max-width: 768px) {
-    .top-nav {
-        padding: 15px 20px;
-        gap: 10px;
-    }
+          <ul class="mini-list">
+            <li>
+              <span class="dot green"></span>
+              Streaming & gaming
+            </li>
+            <li>
+              <span class="dot gold"></span>
+              Detailing & garage content
+            </li>
+            <li>
+              <span class="dot blue"></span>
+              Socials, school, and vlogs
+            </li>
+          </ul>
 
-    .logo {
-        font-size: 1.4rem;
-        flex-basis: 100%;
-        order: 1;
-    }
+          <div class="panel-quote">
+            “Always building, always creating, always connecting.”
+          </div>
+        </aside>
+      </section>
 
-    .nav-links {
-        gap: 15px;
-        flex-basis: 100%;
-        order: 2;
-        justify-content: center;
-    }
+      <section class="overview">
+        <article class="panel intro-panel">
+          <div class="section-heading">
+            <p>About</p>
+            <span>Who this is</span>
+          </div>
+          <h3>Built for a bigger online presence.</h3>
+          <p>
+            This is more than a homepage — it’s a digital hub for every side of the brand. From
+            streaming highlights to car detailing, this space keeps everything easy to find and easy
+            to follow.
+          </p>
+        </article>
 
-    .nav-links a {
-        font-size: 0.85rem;
-    }
-}
+        <div class="stats-grid">
+          <div class="stat-card">
+            <strong>03</strong>
+            <span>Core interests</span>
+          </div>
+          <div class="stat-card">
+            <strong>∞</strong>
+            <span>Creative ideas</span>
+          </div>
+          <div class="stat-card">
+            <strong>1</strong>
+            <span>Community</span>
+          </div>
+        </div>
+      </section>
 
-/* ===== MOBILE RESPONSIVE (480px and below) ===== */
-@media (max-width: 480px) {
-    .top-nav {
-        padding: 12px 15px;
-    }
+      <section class="showcase">
+        <div class="section-heading section-heading-wide">
+          <p>Highlights</p>
+          <span>What you'll find</span>
+        </div>
 
-    .logo {
-        font-size: 1.1rem;
-        text-align: center;
-    }
+        <div class="cards-grid">
+          <article class="feature-card">
+            <div class="card-icon purple">◈</div>
+            <h3>Gaming & community</h3>
+            <p>Keep up with streams, clips, and the online community that follows the journey.</p>
+            <a href="social.html">Jump to socials</a>
+          </article>
 
-    .nav-links {
-        gap: 10px;
-        flex-basis: 100%;
-    }
+          <article class="feature-card">
+            <div class="card-icon gold">✦</div>
+            <h3>Detailing & garage</h3>
+            <p>Explore the business side, from car care to the custom detail work behind the brand.</p>
+            <a href="business.html">View detailing</a>
+          </article>
 
-    .nav-links a {
-        font-size: 0.75rem;
-        padding: 5px 8px;
-    }
-}
+          <article class="feature-card">
+            <div class="card-icon blue">◎</div>
+            <h3>School & daily life</h3>
+            <p>Catch the personal side of the creator — daily moments, vlogs, and everything in between.</p>
+            <a href="social.html">Follow along</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">© 2025 Sleepyhub <span>built for the internet</span></footer>
+  </body>
+</html>
